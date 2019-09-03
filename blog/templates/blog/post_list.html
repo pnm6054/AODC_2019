@@ -1,0 +1,40 @@
+{% load static %}
+<html>
+    <head>
+        <title>Wind-Power Generation Prediction</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">   
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <!-- <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+
+        <div class="page-header">
+            <h1><a href="/">Wind-Power Generation Prediction</a></h1>
+        </div>
+
+        <div class="content container">
+                <h3 id='description'><a href="{% static "description.html" %}">description</a></h3>
+                <h3>Updated every three hours</h3>
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class="post">
+                            <h1><a href="">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                            <!--<img src="{% static "media/prediction.png" %}" alt="pred">-->
+                            {% if post.photo %}
+                                <img src="{{ post.photo.url }}" alt="">
+                            {% endif %}
+                            <div class="date">
+                                <p>published: {{ post.published_date }}</p>
+                            </div>
+                            <hr>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
