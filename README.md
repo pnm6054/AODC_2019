@@ -16,4 +16,4 @@ using kma's aws, asos data
 > input past 120 hours data <br>
 > output next 72 hour wind generation output
 
-for more **preprocessing** information [description](./blog/static/media/description.html)
+for more **preprocessing** information [description](https://github.com/pnm6054/AODC_2019/blob/master/blog/static/description.html)
